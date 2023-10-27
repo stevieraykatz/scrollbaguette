@@ -1,0 +1,35 @@
+## Local env
+node_modules
+.idea
+package-lock.json
+.yarnclean
+yarn-error.log
+.vscode
+.env
+.prettierrc
+.nvmrc
+dist
+tenderly.yaml
+
+# temp files
+tasks/temp_index.ts
+tasks/temp_task.ts
+
+#Hardhat files
+cache
+artifacts
+deployments
+.openzeppelin
+
+# typechain
+typechain-types
+eth-sdk/abis/*
+
+# yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
