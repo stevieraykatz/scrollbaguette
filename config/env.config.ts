@@ -7,7 +7,6 @@ import {EnvConfig} from "./types";
 dotenvConfig({path: resolve(__dirname, "../.env")});
 
 const DEPLOYER_KEY = extractString("DEPLOYER_KEY");
-const PROXY_ADMIN_KEY = extractString("PROXY_ADMIN_KEY");
 const ETHERSCAN_API_KEY = extractString("ETHERSCAN_API_KEY");
 const GOERLI_RPC_URL = extractString("GOERLI_RPC_URL");
 const GANACHE_RPC_URL = extractString("GANACHE_RPC_URL");
@@ -40,5 +39,5 @@ export const envConfig: EnvConfig = {
   MUMBAI_RPC_URL,
   POLYGON_RPC_URL,
   POLYSCAN_API_KEY,
-  ACCOUNTS: [DEPLOYER_KEY, PROXY_ADMIN_KEY],
+  ACCOUNTS: [DEPLOYER_KEY],
 };
