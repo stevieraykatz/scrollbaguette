@@ -13,7 +13,7 @@ const gc = runInNewContext('gc'); // nocommit
 gc();
 
 async function main(): Promise<void> {
-    const address = "0xB9509140344056923888Dc78843b625ADE59589A"
+    const address = "0x00974bB87ED68157AA578b7adB06361032FbE045"
     const [deployer] = await ethers.getSigners();
     const b = BaguetteNFT__factory.connect(address, deployer)
     for(let i=1; i<101; i++) {

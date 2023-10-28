@@ -29,6 +29,7 @@ library Bakery {
     s2 => CUTS = 3, 7, 9, 14, 15, 16, 20
     s3 => BOTTOM = 8, 18, 27, 28, 29
     s4 => BODY = 5, 10, 13, 17, 22, 25
+    s5 => LIGHTBODY = 4, 6, 19, 23
     s6 => SUPERCRISP = 24, 26
 */
   function getBaguette(
