@@ -30,6 +30,15 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
+    scroll: {
+      url: "https://rpc.scroll.io",
+      chainId: 534352,
+      accounts: envConfig.ACCOUNTS,
+    },
+    scrollSepolia: {
+      url: "https://sepolia-rpc.scroll.io/",
+      accounts: envConfig.ACCOUNTS,
+    },
     mumbai: {
       url: envConfig.MUMBAI_RPC_URL,
       accounts: envConfig.ACCOUNTS,
