@@ -14,6 +14,7 @@ tenderly.yaml
 # temp files
 tasks/temp_index.ts
 tasks/temp_task.ts
+outputs
 
 #Hardhat files
 cache
