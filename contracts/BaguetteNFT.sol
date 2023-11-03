@@ -5,7 +5,7 @@ pragma solidity 0.8.19;
 import {ERC721, ERC721Enumerable} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import {ReentrancyGuard} from "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
-import {Bakery} from "./lib/Bakery.sol";
+import {Bakery} from "./bakery/Bakery.sol";
 import {Base64} from "./lib/Base64.sol";
 import {Strings} from "./lib/Strings.sol";
 
