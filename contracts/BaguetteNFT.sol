@@ -65,7 +65,7 @@ contract BaguetteNFT is ERC721Enumerable, ReentrancyGuard, Ownable {
           abi.encodePacked(
             '{"name": "Baguette #',
             Strings.toString(tokenId),
-            '", "description": "For the future of France!", "image": "data:image/svg+xml;base64,',
+            '", "description": "Building the future of France!", "image": "data:image/svg+xml;base64,',
             Base64.encode(bytes(output)),
             '"}'
           )

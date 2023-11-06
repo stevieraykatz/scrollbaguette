@@ -8,13 +8,28 @@ import {
   BakeCrisp__factory,
   BakeCuts__factory,
   BakeLightBody__factory,
-  BakeSuperCrisp__factory,
+  BakeFrance__factory,
   Bakery__factory,
   BaguetteNFT__factory,
+  Background__factory,
+  BakeText__factory,
 } from "typechain-types";
 
 async function main(): Promise<void> {
   const [deployer] = await ethers.getSigners();
+
+
+  // Deploy background libs
+  const Text = new BakeText__factory(deployer);
+  const text = await Text.deploy();
+  await text.deployed();
+  
+  const BG = new Background__factory({
+    "contracts/bakery/BakeText.sol:BakeText": text.address,
+  },
+  deployer);
+  const bg = await BG.deploy();
+  await bg.deployed();
 
   // Deploy Bakery libs
   const Body1 = new BakeBody1__factory(deployer);
@@ -41,19 +56,19 @@ async function main(): Promise<void> {
   const lightBody = await LightBody.deploy();
   await lightBody.deployed();
 
-  const SuperCrisp = new BakeSuperCrisp__factory(deployer);
-  const superCrisp = await SuperCrisp.deploy();
-  await superCrisp.deployed();
+  const France = new BakeFrance__factory(deployer);
+  const france = await France.deploy();
+  await france.deployed();
 
   const Bakery = new Bakery__factory(
     {
-      "contracts/lib/BakeBody1.sol:BakeBody1": body1.address,
-      "contracts/lib/BakeBody2.sol:BakeBody2": body2.address,
-      "contracts/lib/BakeBottom.sol:BakeBottom": bottom.address,
-      "contracts/lib/BakeCrisp.sol:BakeCrisp": crisp.address,
-      "contracts/lib/BakeCuts.sol:BakeCuts": cuts.address,
-      "contracts/lib/BakeLightBody.sol:BakeLightBody": lightBody.address,
-      "contracts/lib/BakeSuperCrisp.sol:BakeSuperCrisp": superCrisp.address,
+      "contracts/bakery/Background.sol:Background": bg.address,
+      "contracts/bakery/BakeCrisp.sol:BakeCrisp": crisp.address,
+      "contracts/bakery/BakeCuts.sol:BakeCuts": cuts.address,
+      "contracts/bakery/BakeBody1.sol:BakeBody1": body1.address,
+      "contracts/bakery/BakeBottom.sol:BakeBottom": bottom.address,
+      "contracts/bakery/BakeLightBody.sol:BakeLightBody": lightBody.address,
+      "contracts/bakery/BakeFrance.sol:BakeFrance": france.address,
     },
     deployer
   );
@@ -62,7 +77,7 @@ async function main(): Promise<void> {
 
   const BaguetteNFT = new BaguetteNFT__factory(
     {
-      "contracts/lib/Bakery.sol:Bakery": bakery.address,
+      "contracts/bakery/Bakery.sol:Bakery": bakery.address,
     },
     deployer
   );
