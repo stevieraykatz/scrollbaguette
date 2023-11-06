@@ -7,13 +7,7 @@ import {EnvConfig} from "./types";
 dotenvConfig({path: resolve(__dirname, "../.env")});
 
 const DEPLOYER_KEY = extractString("DEPLOYER_KEY");
-const ETHERSCAN_API_KEY = extractString("ETHERSCAN_API_KEY");
-const GOERLI_RPC_URL = extractString("GOERLI_RPC_URL");
-const GANACHE_RPC_URL = extractString("GANACHE_RPC_URL");
-const MAINNET_RPC_URL = extractString("MAINNET_RPC_URL");
-const MUMBAI_RPC_URL = extractString("MUMBAI_RPC_URL");
-const POLYGON_RPC_URL = extractString("POLYGON_RPC_URL");
-const POLYSCAN_API_KEY = extractString("POLYSCAN_API_KEY");
+const SCROLLSCAN_API_KEY = extractString("SCROLLSCAN_API_KEY");
 
 function extractString(name: string): string {
   const envVar = process.env[name];
@@ -32,12 +26,6 @@ export function getHardhatAccounts(accountList: string[]): HardhatNetworkAccount
 }
 
 export const envConfig: EnvConfig = {
-  ETHERSCAN_API_KEY,
-  GANACHE_RPC_URL,
-  GOERLI_RPC_URL,
-  MAINNET_RPC_URL,
-  MUMBAI_RPC_URL,
-  POLYGON_RPC_URL,
-  POLYSCAN_API_KEY,
+  SCROLLSCAN_API_KEY,
   ACCOUNTS: [DEPLOYER_KEY],
 };
